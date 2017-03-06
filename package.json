@@ -4,21 +4,24 @@
   "description": "A bookstore in ReactJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-db": "dropdb mistaken-blesbok; createdb mistaken-blesbok; psql mistaken-blesbok < sql/schema.sql"
+    "build-db": "dropdb mistaken-blesbok; createdb mistaken-blesbok; psql mistaken-blesbok < sql/schema.sql",
+    "babel-node": "babel-node --presets=env --ignore='foo|bar|baz'",
+    "start": "nodemon webserver/server.js"
   },
   "author": "ideans, johnware15",
   "license": "MIT",
   "dependencies": {
-    "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
     "express": "^4.15.2",
     "pg-promise": "^5.6.3",
     "postgresql": "^0.0.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.2.1",
+    "babel-preset-react": "^6.23.0",
     "webpack": "^2.2.1"
   }
 }
