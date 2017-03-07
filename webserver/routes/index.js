@@ -9,10 +9,22 @@ router.get( '/', ( request, response, next) => {
   response.sendFile( path.join( __dirname, '../index.html' ))
 })
 
-router.post( '/books/add', API.Book.add )
+router.post( '/books', API.Book.add )
 router.get( '/books', API.Book.getAll )
 router.get( '/books/:id', API.Book.getOne )
-// router.put( '/book/edit/:id', API.Book.edit )
-router.delete( '/books/delete/:id', API.Book.delete )
+// router.put( '/books/:id', API.Book.edit )
+router.delete( '/books/:id', API.Book.delete )
+
+router.post( '/authors', API.Author.add )
+router.get( '/authors', API.Author.getAll )
+router.get( '/authors/:id', API.Author.getOne )
+router.put( '/authors', API.Author.edit )
+router.delete( '/authors/:id', API.Author.delete )
+
+router.post( '/genres', API.Genre.add )
+router.get( '/genres', API.Genre.getAll )
+router.get( '/genres/:id', API.Genre.getOne )
+router.put( '/genres', API.Genre.edit )
+router.delete( '/genres/:id', API.Genre.delete )
 
 module.exports = router
