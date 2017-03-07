@@ -6,6 +6,17 @@ app.use( '/', routes )
 
 app.use( ( request, response, next ) =>{
   let error = new Error( "We ain't got it." )
+import bodyParser from 'body-parser'
+const app = express()
+const routes = require('./routes')
+
+app.use( bodyParser.json() )
+app.use( bodyParser.urlencoded({ extended: false }))
+
+app.use( '/', routes )
+
+app.use( ( request, response, next ) =>{
+  let error = new Error( "We aint got it." )
   error.status = 404
   next( error )
 })

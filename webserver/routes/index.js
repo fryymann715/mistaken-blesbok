@@ -10,5 +10,7 @@ router.get( '/', ( request, response, next) => {
 router.post( '/books/add', API.Book.add )
 router.get( '/books', API.Book.getAll )
 router.get( '/books/:id', API.Book.getOne )
+// router.put( '/book/edit/:id', API.Book.edit )
+router.delete( '/books/delete/:id', API.Book.delete )
 
 module.exports = router
