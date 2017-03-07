@@ -1,17 +1,15 @@
 import express from 'express'
-const app = express()
-const routes = require('./routes')
-
-app.use( '/', routes )
-
-app.use( ( request, response, next ) =>{
-  let error = new Error( "We ain't got it." )
 import bodyParser from 'body-parser'
+import path from 'path'
+import logger from 'morgan'
+
 const app = express()
 const routes = require('./routes')
 
+app.use( logger( 'dev' ))
 app.use( bodyParser.json() )
 app.use( bodyParser.urlencoded({ extended: false }))
+app.use( express.static( path.join( __dirname, 'public' )))
 
 app.use( '/', routes )
 
@@ -20,6 +18,7 @@ app.use( ( request, response, next ) =>{
   error.status = 404
   next( error )
 })
+
 app.use( ( request, response, next ) => {
   response.status( error.status || 500 )
     .json({

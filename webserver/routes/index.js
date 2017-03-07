@@ -1,10 +1,12 @@
-const express = require('express')
-const router = express.Router()
-
+import express from 'express'
+import app from '../app'
+import path from 'path'
 import * as API from '../../database/index'
 
+const router = express.Router()
+
 router.get( '/', ( request, response, next) => {
-  response.json({ status: 'Whaddup.' })
+  response.sendFile( path.join( __dirname, '../index.html' ))
 })
 
 router.post( '/books/add', API.Book.add )
