@@ -5,13 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build-db": "dropdb mistaken-blesbok; createdb mistaken-blesbok; psql mistaken-blesbok < sql/schema.sql",
-    "babel-node": "babel-node --presets=env --ignore='foo|bar|baz'",
-    "start": "nodemon webserver/server.js"
+    "start": "nodemon webserver/app.js --exec babel-node"
   },
   "author": "ideans, johnware15",
   "license": "MIT",
   "dependencies": {
-    "babel-core": "^6.23.1",
     "express": "^4.15.2",
     "pg-promise": "^5.6.3",
     "postgresql": "^0.0.1",
@@ -20,7 +18,9 @@
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
     "babel-preset-env": "^1.2.1",
+    "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
     "webpack": "^2.2.1"
   }

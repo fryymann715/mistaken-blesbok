@@ -1,7 +1,14 @@
-import app from '../../server'
+const express = require('express')
+const router = express.Router()
 
-const router = app.router()
+import * as API from '../../database/index'
 
-router.get( '/', ( request, response, next ) => {
-  response.send( 'Work?' )
+router.get( '/', ( request, response, next) => {
+  response.json({ status: 'Whaddup.' })
 })
+
+router.post( '/books/add', API.Book.add )
+router.get( '/books', API.Book.getAll )
+router.get( '/books/:id', API.Book.getOne )
+
+module.exports = router
