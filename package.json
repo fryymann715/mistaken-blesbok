@@ -10,6 +10,7 @@
   "author": "ideans, johnware15",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "pg-promise": "^5.6.3",
     "postgresql": "^0.0.1",
