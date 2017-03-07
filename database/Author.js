@@ -1,8 +1,9 @@
  import db from './db'
 
- const addAuthor = `INSERT INFO author (name) VALUES ($1) RETURNING *`
+ const addAuthor = `INSERT INTO author (name) VALUES ($1) RETURNING *`
  const getOneAuthor = `SELECT * FROM author WHERE id=$1`
- const getAllAuthor = `SELECT * from author`
+ const getAllAuthors = `SELECT * from author`
+ const editAuthor = `UPDATE author SET name=$1 WHERE id=$2 RETURNING *`
  const deleteAuthor = `DELETE FROM author where id=$1`
 
  const Author = {
@@ -37,14 +38,21 @@
       db.query(getAllAuthors)
         .then( authors => response.status(200).json({
           status: 'Success',
-          data: authors
+          data: authors,
           message: 'Retrieved all authors.'
         }))
         .catch( error => next( error ) )
     },
 
     edit: ( request, response, next ) => {
-
+      let { id, name } = request.body
+      db.query(editAuthor, [name, id])
+        .then( author => response.status(200).json({
+          status: 'Success.',
+          data: author,
+          message: 'Updated author.'
+        }))
+        .catch( error => next( error ) )
     },
 
     delete: ( request, response, next ) => {
@@ -57,4 +65,4 @@
       .catch( error => next( error ) )
     },
  }
- export defualt Author
+ export default Author
