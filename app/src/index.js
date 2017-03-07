@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
+import HomePage from './components/homePage'
+
 const App = () => {
 
   return (
-    <div>
-      <h1>APP</h1>
+    <div className="app">
+      <HomePage />
     </div>
   )
 }
-console.log( document.getElementById('app') )
 
 ReactDOM.render( <App />, document.getElementById('app') )

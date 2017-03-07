@@ -6,13 +6,19 @@ module.exports = {
     filename: "app.bundle.js"
   },
   module: {
-    loaders: [{
-      test: /.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets: [ 'env', 'react' ]
+    loaders: [
+      {
+        test: /.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: [ 'env', 'react' ]
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader" 
       }
-    }]
+    ]
   }
 }
