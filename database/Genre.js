@@ -6,13 +6,15 @@ const getAllGenres = `SELECT * from genre`
 const editGenre = `UPDATE genre SET name=$1 WHERE id=$2 RETURNING *`
 const deleteGenre = `DELETE FROM genre where id=$1`
 
+const getByName = 'SELECT * FROM genre WHERE name=$1'
+
+>>>>>>> Alter addBook funtion to account take author and genre name and add entries in relation-tables
 const Genre = {
 
   add: ( request, response, next ) => {
 
     let { name } = request.body
-    console.log( name )
-    db.query(addGenre, name)
+    db.query( addGenre, name )
       .then( genre => response.status(200).json({
         status: 'Success',
         data: genre,
@@ -23,8 +25,8 @@ const Genre = {
 
   getOne: ( request, response, next ) => {
     let { id } = request.params
-    db.query(getOneGenre, id)
-      .then( genre => response.status(200).json({
+    db.query( getOneGenre, id )
+      .then( genre => response.status( 200 ).json({
         status: 'Success',
         data: genre,
         message: 'Retrieved genre.'
@@ -33,10 +35,8 @@ const Genre = {
   },
 
   getAll: ( request, response, next ) => {
-    console.log( "Received request for all genres." )
-
-    db.query(getAllGenres)
-      .then( genres => response.status(200).json({
+    db.query( getAllGenres )
+      .then( genres => response.status( 200 ).json({
         status: 'Success',
         data: genres,
         message: 'Retrieved all genres.'
@@ -46,8 +46,8 @@ const Genre = {
 
   edit: ( request, response, next ) => {
     let { name, id } = request.body
-    db.query(editGenre, [name, id])
-      .then( genre => response.status(200).json({
+    db.query( editGenre, [ name, id ] )
+      .then( genre => response.status( 200 ).json({
         status: 'Success.',
         data: genre,
         message: 'Updated genre.'
@@ -57,12 +57,24 @@ const Genre = {
   delete: ( request, response, next ) => {
     let { id } = request.params
     db.query(deleteGenre, id)
-    .then( response.status(200).json({
+    .then( response.status( 200 ).json({
       status: 'Success',
       message: 'Deleted genre from database.'
     }))
     .catch( error => next( error ) )
   },
+
+  noAPI: {
+    getByName: name => {
+      return db.query( getByName, name )
+      .then( genre => genre )
+    },
+
+    add: name => {
+      return db.query( addGenre, name )
+      .then( genre => genre )
+    }
+  }
 }
 
 export default Genre
