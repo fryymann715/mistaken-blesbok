@@ -1,13 +1,15 @@
 CREATE TABLE "book" (
 "id"  SERIAL NOT NULL ,
-"title" VARCHAR NOT NULL DEFAULT 'NULL' ,
+"title" VARCHAR NOT NULL ,
+"img_url" VARCHAR DEFAULT '/book-default.png' ,
 PRIMARY KEY ("id")
 );
 
 CREATE TABLE "author" (
 "id"  SERIAL NOT NULL ,
 "name" VARCHAR NOT NULL DEFAULT 'NULL' ,
-PRIMARY KEY ("id")
+PRIMARY KEY ("id") ,
+UNIQUE ("name")
 );
 
 CREATE TABLE "genre" (

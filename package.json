@@ -4,9 +4,9 @@
   "description": "A bookstore in ReactJS",
   "main": "index.js",
   "scripts": {
-    "build-db": "dropdb mistaken-blesbok; createdb mistaken-blesbok; psql mistaken-blesbok < sql/schema.sql",
+    "db:build": "dropdb mistaken-blesbok; createdb mistaken-blesbok; psql mistaken-blesbok < sql/schema.sql; psql mistaken-blesbok < sql/books.sql ",
     "start": "nodemon webserver/app.js --exec babel-node",
-    "build": "webpack"
+    "react:build": "webpack"
   },
   "author": "ideans, johnware15",
   "license": "MIT",

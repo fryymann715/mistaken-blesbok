@@ -6,12 +6,13 @@
  const editAuthor = `UPDATE author SET name=$1 WHERE id=$2 RETURNING *`
  const deleteAuthor = `DELETE FROM author where id=$1`
 
- const Author = {
+const getByName = 'SELECT * FROM author WHERE name=$1'
+
+const Author = {
 
     add: ( request, response, next ) => {
 
-      let { title } = request.body
-      console.log( title )
+      let { name } = request.body
       db.query(addAuthor, name)
         .then( author => response.status(200).json({
           status: 'Success',
@@ -63,6 +64,17 @@
       message: 'Deleted author from database.'
       }))
       .catch( error => next( error ) )
+    },
+
+    noAPI: {
+      getByName: name => {
+        return db.query( getByName, name )
+        .then( author => author )
+      },
+       add: name => {
+        return db.query( addAuthor, name )
+          .then( author => author )
+       }
     },
  }
  export default Author
