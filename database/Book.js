@@ -12,11 +12,6 @@ JOIN genre ON book_genre.genre_id=genre.id
 const getAllBooks = `SELECT * from book`
 const deleteBook = `DELETE FROM book where id=$1`
 
-const addBook = `INSERT INTO book (title) VALUES ($1) RETURNING *`
-const getOneBook = `SELECT * FROM book WHERE id=$1`
-const getAllBooks = `SELECT * from book`
-const deleteBook = `DELETE FROM book where id=$1`
-
 const Book = {
 
   add: ( request, response, next ) => {

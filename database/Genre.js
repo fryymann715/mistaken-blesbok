@@ -8,7 +8,6 @@ const deleteGenre = `DELETE FROM genre where id=$1`
 
 const getByName = 'SELECT * FROM genre WHERE name=$1'
 
->>>>>>> Alter addBook funtion to account take author and genre name and add entries in relation-tables
 const Genre = {
 
   add: ( request, response, next ) => {
