@@ -8630,7 +8630,8 @@ var BookList = function (_Component) {
     var _this = _possibleConstructorReturn(this, (BookList.__proto__ || Object.getPrototypeOf(BookList)).call(this, props));
 
     _this.state = {
-      books: []
+      books: [],
+      page: _this.props.page
     };
     return _this;
   }
@@ -8653,6 +8654,7 @@ var BookList = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      console.log(this.state.page);
       var books = this.state.books;
       return _react2.default.createElement(
         'div',
@@ -12777,6 +12779,7 @@ __webpack_require__(260);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var BookListPage = function BookListPage(props) {
+  console.log(props);
   return _react2.default.createElement(
     'div',
     { className: 'booklist-page' },
@@ -12785,7 +12788,7 @@ var BookListPage = function BookListPage(props) {
       { className: 'booklist-page-title' },
       'BOOK LIST'
     ),
-    _react2.default.createElement(_components.BookList, null)
+    _react2.default.createElement(_components.BookList, { pageNumber: props.params.page })
   );
 };
 
@@ -12855,7 +12858,7 @@ exports = module.exports = __webpack_require__(19)();
 
 
 // module
-exports.push([module.i, "\n.book {\n  border: solid black 1px;\n  width: 20%;\n  margin: 10px;\n  padding: 5px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n\n.book-img-container {\n  max-width: 80px;\n  max-height: 80px;\n}\n\n.book-img {\n  width: 100%;\n  height: auto;\n}\n\n.book-title {\n  align-self: center;\n  padding: 0px;\n  margin: 0px;\n}\n", ""]);
+exports.push([module.i, "\n.book {\n  border: solid black 1px;\n  max-width: 200px;\n  margin: 10px;\n  padding: 5px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n}\n\n.book-img-container {\n  max-width: 160px;\n  max-height: 160px;\n}\n\n.book-img {\n  width: 100%;\n  height: auto;\n}\n\n.book-title {\n  align-self: center;\n  padding: 0px;\n  margin: 0px;\n}\n", ""]);
 
 // exports
 
@@ -12911,7 +12914,7 @@ exports = module.exports = __webpack_require__(19)();
 
 
 // module
-exports.push([module.i, ".booklist-page {\n  border: solid red 2px;\n  background-color: white;\n\n  width: 90%;\n  height: 80%;\n\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n\n\n}\n", ""]);
+exports.push([module.i, ".booklist-page {\n  border: solid red 2px;\n  background-color: white;\n\n  width: 90%;\n\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n\n}\n\n.booklist-page-title {\n  align-self: center;\n}\n", ""]);
 
 // exports
 

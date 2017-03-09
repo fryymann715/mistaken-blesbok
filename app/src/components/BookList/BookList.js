@@ -7,7 +7,8 @@ export default class BookList extends Component {
   constructor( props ) {
     super( props )
     this.state = {
-      books: []
+      books: [],
+      page: this.props.page
     }
   }
 
@@ -25,6 +26,7 @@ export default class BookList extends Component {
   }
 
   render() {
+    console.log( this.state.page )
     let books = this.state.books
     return (
       <div className="book-list">
