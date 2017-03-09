@@ -11,7 +11,7 @@ export default class AddBookForm extends Component {
         title: '',
         author: '',
         genre: ''
-      }
+      },
     },
     this.handleSubmit = this.handleSubmit.bind( this )
   }
@@ -33,7 +33,7 @@ export default class AddBookForm extends Component {
       .then( response => response.json() )
       .then( json => {
         let redirectURL = `/book-details/${json.data.id}`
-        browserHistory.push( '/' )
+        this.context.router.push( redirectURL )
 
       })
 
@@ -44,8 +44,6 @@ export default class AddBookForm extends Component {
     book[field] = event.target.value
     this.setState({ book })
   }
-
-
 
   render() {
 
@@ -67,4 +65,8 @@ export default class AddBookForm extends Component {
       </form>
     )
   }
+}
+
+AddBookForm.contextTypes = {
+  router: React.PropTypes.object.isRequired
 }
