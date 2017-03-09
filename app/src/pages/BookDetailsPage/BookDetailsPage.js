@@ -7,8 +7,9 @@ const BookDetailsPage = () => {
 
   return (
     <div className="book-details-page">
-      <h3>BOOK DETAILS PAGE</h3>
+    
       {/* <BookDetails /> */}
+
     </div>
   )
 }
