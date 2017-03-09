@@ -9,11 +9,14 @@ router.get( '/', ( request, response, next) => {
   response.sendFile( path.join( __dirname, '../index.html' ))
 })
 
+router.get( '/welcome', API.Book.getWelcomeBooks )
+
 router.post( '/books', API.Book.add )
 router.get( '/books', API.Book.getAll )
 router.get( '/books/:id', API.Book.getOne )
 // router.put( '/books/:id', API.Book.edit )
 router.delete( '/books/:id', API.Book.delete )
+
 
 router.post( '/authors', API.Author.add )
 router.get( '/authors', API.Author.getAll )

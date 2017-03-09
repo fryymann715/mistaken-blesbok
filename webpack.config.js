@@ -1,10 +1,11 @@
 
 module.exports = {
-  entry: "./app/src/index.js",
+  entry: "./app/src/app.js",
   output: {
     path: "./webserver/public",
     filename: "app.bundle.js"
   },
+  watch: true,
   module: {
     loaders: [
       {
@@ -17,7 +18,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader" 
+        loader: "style-loader!css-loader"
       }
     ]
   }

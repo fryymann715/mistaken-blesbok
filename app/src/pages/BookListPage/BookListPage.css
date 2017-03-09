@@ -1,0 +1,13 @@
+.booklist-page {
+  border: solid red 2px;
+  background-color: white;
+
+  width: 90%;
+  height: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+}
