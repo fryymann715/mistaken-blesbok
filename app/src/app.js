@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
-
 import { NavBar } from './components/'
-import { WelcomePage, BookListPage, BookDetailsPage, AddBookPage } from './pages/'
+import {
+  WelcomePage,
+  BookListPage,
+  BookDetailsPage,
+  AuthorDetailsPage,
+  AddBookPage
+} from './pages/'
 
 
 import './Layout.css'
@@ -23,8 +28,8 @@ ReactDOM.render(
     <Route path='/' component={ Layout }>
       <IndexRoute component={ WelcomePage }/>
       <Route path="book-list/:page" component={ BookListPage }/>
+      <Route path="author-details/:id" component={ AuthorDetailsPage }/>
       <Route path="add-book" component={ AddBookPage }/>
       <Route path="book-details/:id" component={ BookDetailsPage }/>
-      {/* <Route path="author-details/:id" component={ AuthorDetailsPage }/> */}
     </Route>
   </Router>, document.getElementById('app') )
