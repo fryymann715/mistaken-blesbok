@@ -1,21 +1,23 @@
 .navbar {
-  width: 80%;
   background-color: rgba(119, 119, 120, .7);
+  border-radius: 15px;
   color: white;
   display: flex;
   justify-content: space-around;
-  border-radius: 15px;
+  position: fixed;
+  top: 5px;
+  width: 80%;
 }
 
 .navbar-link {
-  margin: 5px;
-  padding: 10px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
   background-color: #2e2e2e;
   border: ridge white 1px;
   border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+  padding: 10px;
+  text-decoration: none;
 }
 
 .navbar-link:hover {

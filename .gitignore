@@ -2,4 +2,4 @@ node_modules
 npm-debug*
 yarn.error
 
-*/webapp.bundle.js
+app.bundle.js

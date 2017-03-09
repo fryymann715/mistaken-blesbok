@@ -29,14 +29,18 @@ const Book = {
 
         if ( !authorResult ) {
           Promise.resolve( API.Author.noAPI.add( author ) )
-            .then( authorObj => console.log( 'author ', authorObj ) )
+            .then( authorObj => {
+              author_id = authorObj[0].id
+            } )
             .catch( error => next( error ) )
         } else {
           author_id = authorResult.id
         }
         if ( !genreResult ) {
           Promise.resolve( API.Genre.noAPI.add( genre ) )
-            .then( genreObj => console.log( 'genre ', genreObj ) )
+            .then( genreObj => {
+              genre_id = genreObj[0].id
+            } )
             .catch( error => next( error ) )
         } else {
           genre_id = genreResult.id
