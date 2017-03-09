@@ -7,30 +7,29 @@ export default class BookDetails extends Component {
   constructor( props ) {
     super( props )
     this.state = {
-      title: "",
-      author: "",
-      genre:"",
-      id: "",
+      id: this.props.id,
+      book: {}
     }
   }
 
   componentDidMount() {
-    fetch('/books')
-     .then( data => data.json() )
-     .then( r_books => r_books.data )
-     .then( booksArray => {
-       let books = booksArray.map( ( book, key ) => {
-         return <Book key={ key } book={ book } />
-       })
-       this.setState({ books })
+    let fetchURL = `/books/${this.state.id}`
+    fetch( fetchURL )
+     .then( response => response.json() )
+     .then( json => json.data )
+     .then( book => {
+       console.log( book[0] )
+       this.setState({ book: book[0] })
      })
   }
 
   render() {
-    let books = this.state.books
+    let book = this.state.book
     return (
       <div className="book-details-container">
-        { books }
+        <h1>{ book.title }</h1>
+        <h3>{ book.author }</h3>
+        <h3>{ book.genre }</h3>
       </div>
     )
   }

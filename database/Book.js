@@ -8,7 +8,8 @@ JOIN book_author ON book.id=book_author.book_id
 JOIN author ON book_author.author_id=author.id
 JOIN book_genre ON book.id=book_genre.book_id
 JOIN genre ON book_genre.genre_id=genre.id
- WHERE book.id = $1;`
+ WHERE book.id = $1`
+
 const getAllBooks = `SELECT * from book LIMIT 10 OFFSET 0`
 const getWelcomeBooks = `SELECT * from book LIMIT 4`
 const deleteBook = `DELETE FROM book where id=$1`
@@ -69,11 +70,15 @@ const Book = {
   getOne: ( request, response, next ) => {
     let { id } = request.params
     db.query( getOneBook, id )
-      .then( book => response.status( 200 ).json({
-        status: 'Success',
-        data: book,
-        message: 'Retrieved book.'
-      }))
+      .then( book => {
+        console.log( book )
+        response.status( 200 ).json({
+          status: 'Success',
+          data: book,
+          message: 'Retrieved book.'
+        })
+
+      })
       .catch( error => next( error ) )
 
   },
