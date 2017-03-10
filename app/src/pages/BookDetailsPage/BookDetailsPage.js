@@ -6,7 +6,7 @@ import './BookDetailsPage.css'
 const BookDetailsPage = props => {
 
   return (
-    <div className="book-details-page">
+    <div className="book-details-page page">
 
       <BookDetails id={ props.params.id } />
 
