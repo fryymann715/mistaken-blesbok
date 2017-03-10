@@ -1,14 +1,14 @@
 import React from 'react'
-import BookDetails from '../../components/'
+import { BookDetails } from '../../components/'
 
 import './BookDetailsPage.css'
 
-const BookDetailsPage = () => {
+const BookDetailsPage = props => {
 
   return (
     <div className="book-details-page">
-    
-      {/* <BookDetails /> */}
+
+      <BookDetails id={ props.params.id } />
 
     </div>
   )
