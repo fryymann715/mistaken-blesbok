@@ -4,7 +4,7 @@
   "description": "A bookstore in ReactJS",
   "main": "index.js",
   "scripts": {
-    "db:build": "dropdb mistaken-blesbok; createdb mistaken-blesbok; psql mistaken-blesbok < sql/schema.sql; psql mistaken-blesbok < sql/books.sql ",
+    "db:build": "dropdb mistaken-blesbok;createdb mistaken-blesbok;psql mistaken-blesbok < sql/schema.sql;psql mistaken-blesbok < sql/books.sql;psql mistaken-blesbok < sql/authors.sql;psql mistaken-blesbok < sql/genres.sql;psql mistaken-blesbok < sql/book_author.sql;psql mistaken-blesbok < sql/book_genre.sql;",
     "start": "nodemon webserver/app.js --exec babel-node",
     "react:build": "webpack"
   },
