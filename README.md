@@ -2,6 +2,7 @@
 ___
 
 - [x] Books have a title, author, and genre
+
 ### Users can…
 - [x] Add books into the bookstore system via an admin page (create)
 - [x] See a list of books on the home page (read)
