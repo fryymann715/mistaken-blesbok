@@ -10,6 +10,19 @@ JOIN book_genre ON book.id=book_genre.book_id
 JOIN genre ON book_genre.genre_id=genre.id
 WHERE book.id = $1;`
 const getAllBooks = `SELECT * from book LIMIT 10 OFFSET $1`
+
+const searchForBooks =
+`SELECT DISTINCT(book.*) FROM book
+JOIN book_author ON book.id=book_author.book_id
+JOIN author ON book_author.author_id=author.id
+JOIN book_genre ON book.id=book_genre.book_id
+JOIN genre ON book_genre.genre_id=genre_id
+WHERE LOWER(book.title) LIKE '%{query}%'
+OR LOWER(author.name) LIKE '%{query}%'
+OR lower(genre.name) LIKE '%{query}%'
+ORDER BY (book.title) ASC`
+
+const getWelcomeBooks = `SELECT * from book LIMIT 4`
 const deleteBook = `DELETE FROM book where id=$1`
 
 const getWelcomeBooks = `SELECT * from book LIMIT 4`
@@ -77,7 +90,6 @@ const Book = {
           data: book,
           message: 'Retrieved book.'
         })
-
       })
       .catch( error => next( error ) )
 
@@ -96,7 +108,6 @@ const Book = {
   getAll: ( request, response, next ) => {
     let { page } = request.params
     page = parseInt(page)
-
     let offset = page * PAGE_SIZE
     db.query( getAllBooks, offset )
       .then( books => response.status( 200 ).json({
@@ -119,6 +130,19 @@ const Book = {
       message: 'Deleted book from database.'
     }))
     .catch( error => next( error ) )
+  },
+
+  search: ( request, response, next ) => {
+   let { query } = request.params
+   let searchQuery = searchForBooks.replace( /({query})/g, query)
+
+   db.query( searchQuery )
+   .then( books => response.status(200).json({
+     status: 'Success',
+     data: books,
+     message: "Retrieved search results."
+   }))
+   .catch( error => next(error) )
   },
 }
 
