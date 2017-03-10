@@ -27,8 +27,8 @@ ReactDOM.render(
   <Router history={ hashHistory }>
     <Route path='/' component={ Layout }>
       <IndexRoute component={ WelcomePage }/>
-      <Route path="book-list/:page" component={ BookListPage }/>
       <Route path="author-details/:id" component={ AuthorDetailsPage }/>
+      <Route path="book-list" component={ BookListPage }/>
       <Route path="add-book" component={ AddBookPage }/>
       <Route path="book-details/:id" component={ BookDetailsPage }/>
     </Route>

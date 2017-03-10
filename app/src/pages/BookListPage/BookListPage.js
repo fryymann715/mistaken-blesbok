@@ -9,7 +9,7 @@ const BookListPage = props => {
     <div className="booklist-page">
       <h2 className="booklist-page-title">BOOK LIST</h2>
 
-      <BookList pageNumber={ props.params.page }/>
+      <BookList />
 
     </div>
   )

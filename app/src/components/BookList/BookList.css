@@ -4,3 +4,21 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.book-list-button-rack {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.book-list-button {
+  font-size: 22px;
+  border: groove #ffffff 2px;
+  padding: 10px;
+  align-content: center;
+}
+
+.book-list-button:hover {
+  border: inset #ffffff 2px;
+  background-color: #3e3e3e;
+}
