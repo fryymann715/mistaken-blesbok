@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
-import { NavBar  } from './components/'
+import { NavBar, SearchBar } from './components/'
 
 import {
   WelcomePage,
@@ -11,6 +11,7 @@ import {
   AddBookPage,
   AddAuthorPage,
   AddGenrePage,
+  SearchResultsPage
 } from './pages/'
 
 
@@ -22,6 +23,7 @@ const Layout = props => {
   return (
     <div className="layout-page">
       <NavBar />
+      <SearchBar />
       { props.children }
     </div>
   )
@@ -33,6 +35,7 @@ ReactDOM.render(
       <IndexRoute component={ WelcomePage }/>
       <Route path="author-details/:id" component={ AuthorDetailsPage }/>
       <Route path="book-list" component={ BookListPage }/>
+      <Route path="/search/:query" component={ SearchResultsPage }/>
       <Route path="add-book" component={ AddBookPage }/>
       <Route path="book-details/:id" component={ BookDetailsPage }/>
       {/* <Route path="author-details/:id" component={ AuthorDetailsPage }/> */}

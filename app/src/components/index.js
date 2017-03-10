@@ -1,6 +1,7 @@
 export { default as Book } from './Book/'
 export { default as BookList } from './BookList/BookList'
 export { default as NavBar } from './NavBar/NavBar'
+export { default as SearchBar } from './SearchBar/SearchBar'
 export { default as WelcomeBooks } from './WelcomeBooks/WelcomeBooks'
 export { default as BookDetails } from './BookDetails/BookDetails'
 export { default as AddBookForm } from './AddBookForm/AddBookForm'

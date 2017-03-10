@@ -20,7 +20,8 @@ JOIN genre ON book_genre.genre_id=genre_id
 WHERE LOWER(book.title) LIKE '%{query}%'
 OR LOWER(author.name) LIKE '%{query}%'
 OR lower(genre.name) LIKE '%{query}%'
-ORDER BY (book.title) ASC`
+ORDER BY (book.title) ASC
+LIMIT 10 OFFSET $1`
 
 const getWelcomeBooks = `SELECT * from book LIMIT 4`
 const deleteBook = `DELETE FROM book where id=$1`
@@ -133,10 +134,10 @@ const Book = {
   },
 
   search: ( request, response, next ) => {
-   let { query } = request.params
+   let { query, page } = request.params
    let searchQuery = searchForBooks.replace( /({query})/g, query)
 
-   db.query( searchQuery )
+   db.query( searchQuery, page )
    .then( books => response.status(200).json({
      status: 'Success',
      data: books,
