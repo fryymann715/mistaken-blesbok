@@ -12,7 +12,7 @@ ___
 - [x] Lists of books are always paginated in groups of 10
 - [x] Book detail view is linked to from the listing and search pages
 - [ ] Search results are presented in a new page
-- [x ] Appropriate HTTP verbs are used for CRUD actions
+- [x] Appropriate HTTP verbs are used for CRUD actions
 - [x] GET requests are only used for read actions
 - [x] POST requests are only used for create actions
 - [x] PUT or PATCH requests are only used for update actions
