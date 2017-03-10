@@ -12,7 +12,7 @@ router.get( '/', ( request, response, next) => {
 router.get( '/welcome', API.Book.getWelcomeBooks )
 
 router.post( '/books', API.Book.add )
-router.get( '/books', API.Book.getAll )
+router.get( '/books/page/:page', API.Book.getAll )
 router.get( '/books/:id', API.Book.getOne )
 // router.put( '/books/:id', API.Book.edit )
 router.delete( '/books/:id', API.Book.delete )
