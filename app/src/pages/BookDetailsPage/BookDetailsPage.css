@@ -1,10 +1,10 @@
 
 .book-details-page {
-  border: solid red 2px;
+  border: solid #758774;
   display: flex;
   justify-content: center;
-  
 
-  width: 90%;
+
+  width: 80%;
   height: 80%;
 }
