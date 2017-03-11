@@ -1,28 +1,27 @@
 .navbar {
-  background-color: rgba(119, 119, 120, .7);
-  border-radius: 15px;
+  background-color: #758774;
   color: white;
   display: flex;
   justify-content: space-around;
   position: fixed;
   top: 5px;
   width: 80%;
-  margin-bottom: 60;
+  margin-bottom: 25;
   z-index: 100;
+  font-family: sans-serif;
 }
 
 .navbar-link {
-  background-color: #2e2e2e;
-  border: ridge white 1px;
-  border-radius: 20px;
+  border: white 1px;
   color: white;
   font-size: 20px;
   margin: 5px;
   padding: 10px;
   text-decoration: none;
+  font-style: sans-serif normal;
 }
 
 .navbar-link:hover {
-  background-color: #8c8c8c;
-  color: #121212;
+  font-style: sans-serif normal;
+  color: #005eff;
 }

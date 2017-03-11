@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 'react-router'
-import { NavBar } from './components/'
+import { NavBar  } from './components/'
 
 import {
   WelcomePage,
