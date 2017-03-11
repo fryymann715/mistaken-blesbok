@@ -34,8 +34,6 @@ const Author = {
     },
 
     getAll: (request, response, next ) => {
-      console.log( "Received request for all authors.")
-
       db.query(getAllAuthors)
         .then( authors => response.status(200).json({
           status: 'Success',

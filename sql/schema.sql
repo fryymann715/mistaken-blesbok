@@ -28,7 +28,7 @@ CREATE TABLE "book_author" (
 "author_id" INTEGER NOT NULL
 );
 
-ALTER TABLE "book_genre" ADD FOREIGN KEY ("book_id") REFERENCES "book" ("id");
-ALTER TABLE "book_genre" ADD FOREIGN KEY ("genre_id") REFERENCES "genre" ("id");
-ALTER TABLE "book_author" ADD FOREIGN KEY ("book_id") REFERENCES "book" ("id");
-ALTER TABLE "book_author" ADD FOREIGN KEY ("author_id") REFERENCES "author" ("id");
+ALTER TABLE "book_genre" ADD FOREIGN KEY ("book_id") REFERENCES "book" ("id") ON DELETE CASCADE;
+ALTER TABLE "book_genre" ADD FOREIGN KEY ("genre_id") REFERENCES "genre" ("id") ON DELETE CASCADE;
+ALTER TABLE "book_author" ADD FOREIGN KEY ("book_id") REFERENCES "book" ("id") ON DELETE CASCADE;
+ALTER TABLE "book_author" ADD FOREIGN KEY ("author_id") REFERENCES "author" ("id") ON DELETE CASCADE;

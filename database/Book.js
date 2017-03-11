@@ -10,10 +10,9 @@ JOIN book_genre ON book.id=book_genre.book_id
 JOIN genre ON book_genre.genre_id=genre.id
 WHERE book.id = $1;`
 const getAllBooks = `SELECT * from book LIMIT 10 OFFSET $1`
-
-const getWelcomeBooks = `SELECT * from book LIMIT 4`
 const deleteBook = `DELETE FROM book where id=$1`
 
+const getWelcomeBooks = `SELECT * from book LIMIT 4`
 const PAGE_SIZE = 10
 
 const Book = {
@@ -73,7 +72,6 @@ const Book = {
     let { id } = request.params
     db.query( getOneBook, id )
       .then( book => {
-        console.log( book )
         response.status( 200 ).json({
           status: 'Success',
           data: book,
@@ -97,11 +95,9 @@ const Book = {
 
   getAll: ( request, response, next ) => {
     let { page } = request.params
-    console.log('GETTING ALL BOOKS')
     page = parseInt(page)
 
     let offset = page * PAGE_SIZE
-    console.log('OFFSET IT :> ', offset )
     db.query( getAllBooks, offset )
       .then( books => response.status( 200 ).json({
         status: 'Success',
