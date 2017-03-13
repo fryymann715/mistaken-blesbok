@@ -1,0 +1,8 @@
+export { default as WelcomePage } from './WelcomePage/WelcomePage'
+export { default as BookListPage } from './BookListPage/BookListPage'
+export { default as BookDetailsPage } from './BookDetailsPage/BookDetailsPage'
+export { default as AddAuthorPage } from './AddAuthorPage/AddAuthorPage'
+export { default as AddBookPage } from './AddBookPage/AddBookPage'
+export { default as AddGenrePage } from './AddGenrePage/AddGenrePage'
+export { default as AuthorDetailsPage } from './AuthorDetailsPage/AuthorDetailsPage'
+export { default as SearchResultsPage } from './SearchResultsPage/SearchResultsPage'

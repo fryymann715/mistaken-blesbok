@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #758774;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  top: 5px;
+  width: 80%;
+  margin-bottom: 25;
+  z-index: 100;
+  font-family: sans-serif;
+}
+
+.navbar-link {
+  border: white 1px;
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+  padding: 10px;
+  text-decoration: none;
+  font-style: sans-serif normal;
+}
+
+.navbar-link:hover {
+  font-style: sans-serif normal;
+  color: #005eff;
+}
