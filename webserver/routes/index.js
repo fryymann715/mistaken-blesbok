@@ -17,6 +17,7 @@ router.get( '/books/:id', API.Book.getOne )
 // router.put( '/books/:id', API.Book.edit )
 router.delete( '/books/:id', API.Book.delete )
 
+router.get( '/books/search/:query/:page', API.Book.search )
 
 router.post( '/authors', API.Author.add )
 router.get( '/authors', API.Author.getAll )

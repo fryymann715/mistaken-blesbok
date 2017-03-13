@@ -18,7 +18,7 @@ export default class BookList extends Component {
   }
 
   getPage( page ) {
-    let fetchURL = `/books/page/${page}`
+    let fetchURL = this.props.fetchURL + page.toString()
     fetch( fetchURL )
       .then( response => response.json() )
       .then( json => json.data )
