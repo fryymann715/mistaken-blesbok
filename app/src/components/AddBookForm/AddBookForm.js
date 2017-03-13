@@ -10,7 +10,8 @@ export default class AddBookForm extends Component {
       book: {
         title: '',
         author: '',
-        genre: ''
+        genre: '',
+        img_url: ''
       },
     },
     this.handleSubmit = this.handleSubmit.bind( this )
@@ -60,6 +61,10 @@ export default class AddBookForm extends Component {
         <input className="add-book-input"
           onChange={ this.setValue.bind( this, 'genre' ) }
           placeholder="Book Genre"></input>
+
+        <input className="add-book-input"
+          onChange={ this.setValue.bind( this, 'img_url' ) }
+          placeholder="image URL"></input>
 
         <input type="submit" value="Submit" />
       </form>
