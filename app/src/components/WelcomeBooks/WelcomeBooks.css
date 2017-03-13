@@ -1,0 +1,6 @@
+.welcomebooks-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

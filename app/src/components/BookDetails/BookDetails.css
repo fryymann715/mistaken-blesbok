@@ -1,0 +1,39 @@
+
+.book-details-container {
+  width: 90%;
+  min-height: 70%;
+  max-height: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-details-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.book-details-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: auto;
+}
+
+.book-details-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.book-details-delete-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  height: 100%;
+
+}

@@ -1,0 +1,10 @@
+.searchbar {
+  top: 10px;
+  margin: 5px;
+  width: 60%;
+  color: red;
+}
+
+.searchbar-form {
+  width: 100%;
+}
