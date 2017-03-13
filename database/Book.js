@@ -23,7 +23,6 @@ OR lower(genre.name) LIKE '%{query}%'
 ORDER BY (book.title) ASC
 LIMIT 10 OFFSET $1`
 
-const getWelcomeBooks = `SELECT * from book LIMIT 4`
 const deleteBook = `DELETE FROM book where id=$1`
 
 const getWelcomeBooks = `SELECT * from book LIMIT 4`
