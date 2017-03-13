@@ -4,8 +4,7 @@ import { BookList } from '../../components/'
 const BookListPage = props => {
   let fetchURL = `/books/page/`
   return (
-    <div className="booklist-page">
-      <h2 className="booklist-page-title">BOOK LIST</h2>
+    <div className="booklist-page page">
       <BookList fetchURL={ fetchURL }/>
     </div>
   )

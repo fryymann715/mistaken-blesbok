@@ -8,7 +8,8 @@ export default class BookList extends Component {
     super( props )
     this.state = {
       books: [],
-      page: 0
+      page: 0,
+      fetchURL: ''
     }
     this.getPage = this.getPage.bind( this )
   }
@@ -19,6 +20,7 @@ export default class BookList extends Component {
 
   getPage( page ) {
     let fetchURL = this.props.fetchURL + page.toString()
+
     fetch( fetchURL )
       .then( response => response.json() )
       .then( json => json.data )
@@ -26,7 +28,7 @@ export default class BookList extends Component {
         let books = booksArray.map( ( book, index ) => {
           return <Book key={ index } book={ book } />
         })
-        this.setState({ books })
+        this.setState({ books, fetchURL })
       })
   }
 
@@ -51,6 +53,7 @@ export default class BookList extends Component {
 
   render() {
     let books = this.state.books
+
     return (
       <div>
         <div className="book-list-button-rack">

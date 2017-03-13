@@ -1,6 +1,6 @@
 .searchbar {
-  position: fixed;
-  top: 60px;
+  top: 10px;
+  margin: 5px;
   width: 60%;
   color: red;
 }

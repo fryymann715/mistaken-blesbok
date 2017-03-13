@@ -5,7 +5,7 @@ const AddBookPage = props => {
   return (
     <div className="add-book page">
       <h1 className="add-book title">Add a Book: </h1>
-      <AddBookForm />
+      <AddBookForm fetchURL="/books"/>
     </div>
   )
 }

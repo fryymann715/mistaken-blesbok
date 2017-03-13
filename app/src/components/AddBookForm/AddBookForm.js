@@ -21,7 +21,7 @@ export default class AddBookForm extends Component {
     event.preventDefault()
     let book = this.state.book
 
-    let request = new Request( '/books', {
+    let request = new Request( this.props.fetchURL, {
       method: 'POST',
       headers: new Headers({
         'Accept': 'application/json, application/xml, text/html, text/plain, */*',

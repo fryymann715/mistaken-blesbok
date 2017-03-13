@@ -1,11 +1,11 @@
 import React from 'react'
-import { AddBookForm } from '../..components/'
+// import { AddBookForm } from '../..components/'
 
-const AddAuthor = props => {
+const AddAuthorPage = props => {
     return (
       <div className="add-author page">
         <h1 className="add-author title">Add an Author: </h1>
-        <AddAuthorForm />
+        {/* <AddAuthorForm /> */}
       </div>
     )
 }

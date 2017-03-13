@@ -14,7 +14,10 @@ export default class SearchBar extends Component {
   handleSubmit( event ) {
     event.preventDefault()
     let query = this.state.query
-    let searchURL = `/search/${query}`
+    if ( query.length < 1 ) {
+      return
+    }
+    let searchURL = `search/${query}`
     this.setState({ query: '' })
     this.context.router.push( searchURL )
   }

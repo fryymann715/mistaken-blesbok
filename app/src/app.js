@@ -14,10 +14,7 @@ import {
   SearchResultsPage
 } from './pages/'
 
-
-
 import './Layout.css'
-
 
 const Layout = props => {
   return (
@@ -35,12 +32,11 @@ ReactDOM.render(
       <IndexRoute component={ WelcomePage }/>
       <Route path="author-details/:id" component={ AuthorDetailsPage }/>
       <Route path="book-list" component={ BookListPage }/>
-      <Route path="/search/:query" component={ SearchResultsPage }/>
+      <Route path="search/:query" component={ SearchResultsPage }/>
       <Route path="add-book" component={ AddBookPage }/>
       <Route path="book-details/:id" component={ BookDetailsPage }/>
-      {/* <Route path="author-details/:id" component={ AuthorDetailsPage }/> */}
+      <Route path="author-details/:id" component={ AuthorDetailsPage }/>
       <Route path="add-author" component={ AddAuthorPage }/>
       <Route path="add-genre" component={ AddGenrePage }/>
-
     </Route>
   </Router>, document.getElementById('app') )
