@@ -1,15 +1,11 @@
 import React from 'react'
-import { AddBookForm } from '../..components/'
+// import { AddBookForm } from '../..components/'
 
-import '.AddAuthorPage.css'
-
-const AddAuthor = props => {
-
+const AddAuthorPage = props => {
     return (
-
-      <div className="add-author-page">
-        <h1>ADD AUTHOR</h1>
-        <AddAuthorForm />
+      <div className="add-author page">
+        <h1 className="add-author title">Add an Author: </h1>
+        {/* <AddAuthorForm /> */}
       </div>
     )
 }

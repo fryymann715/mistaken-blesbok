@@ -3,6 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 800px;
 }
 
 .book-list-button-rack {

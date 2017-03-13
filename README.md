@@ -1,18 +1,22 @@
 # BookStore
 ___
 
+  Clone repository, npm install, npm run db:build, npm run react:build, npm start
+
+___
+
 - [x] Books have a title, author, and genre
 
 ### Users can…
 - [x] Add books into the bookstore system via an admin page (create)
 - [x] See a list of books on the home page (read)
 - [ ] Edit a book’s title, author, or genre (update)
-- [ ] Delete a book from the bookstore (delete)
-- [ ] Search for books by title OR by author OR by genre (read)
+- [x] Delete a book from the bookstore (delete)
+- [x] Search for books by title OR by author OR by genre (read)
 - [x] View book details on a book detail page (read)
 - [x] Lists of books are always paginated in groups of 10
 - [x] Book detail view is linked to from the listing and search pages
-- [ ] Search results are presented in a new page
+- [x] Search results are presented in a new page
 - [x] Appropriate HTTP verbs are used for CRUD actions
 - [x] GET requests are only used for read actions
 - [x] POST requests are only used for create actions
